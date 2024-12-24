@@ -4,6 +4,9 @@ import type { ToolConfig } from "./allTools.js";
 
 import type { GetWalletAddressArgs } from "../interface/index.js";
 
+/**
+ * Gets the connected wallet address.
+ */
 export const getWalletAddressTool: ToolConfig<GetWalletAddressArgs> = {
   definition: {
     type: "function",
@@ -23,6 +26,9 @@ export const getWalletAddressTool: ToolConfig<GetWalletAddressArgs> = {
   },
 };
 
+/**
+ * Gets the connected wallet address.
+ */
 async function getWalletAddress(): Promise<Address> {
   const walletClient = createViemWalletClient();
   const [address] = await walletClient.getAddresses();
