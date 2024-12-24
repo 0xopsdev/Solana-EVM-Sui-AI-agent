@@ -5,6 +5,12 @@ import type { Address } from "viem";
 
 import type { GetBalanceArgs } from "../interface/index.js";
 
+/**
+ * Get the balance of a wallet.
+ *
+ * This tool takes a single parameter, the wallet address to get the balance
+ * from.
+ */
 export const getBalanceTool: ToolConfig<GetBalanceArgs> = {
   definition: {
     type: "function",
