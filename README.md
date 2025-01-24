@@ -1,4 +1,3 @@
-Here’s a professional and comprehensive **README.md** file tailored for a blockchain AI agent repository that supports **Solana** and **EVM** integration:
 
 ---
 
