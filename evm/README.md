@@ -26,8 +26,8 @@ Blockchain Assistant is a powerful tool designed to interact with blockchain net
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dieharye/EVM-AI-Agent.git
-   cd EVM-AI-Agent
+   git clone https://github.com/dieharye/blochain-AI-Agent.git
+   cd blockchain-AI-Agent/evm
    ```
 
 2. Install dependencies:
