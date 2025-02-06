@@ -233,8 +233,7 @@ If you’d like to support this open-source project, please donate to the treasu
 
 ## Contact
 
-https://t.me/dieharye
+https://t.me/luckys01
 
-https://x.com/dieharye
 
 Let me know if you'd like to tweak any section or add further customizations!
