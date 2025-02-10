@@ -3,7 +3,7 @@
 
 # Blockchain AI Agent
 
-**Blockchain AI Agent** is an open-source framework that enables developers to integrate AI-powered agents with **Solana** and **EVM** (Ethereum Virtual Machine) blockchains. With built-in tools and streamlined APIs, the agent empowers developers to perform advanced blockchain operations autonomously using AI models.
+**Blockchain AI Agent** is an open-source framework that enables developers to integrate AI-powered agents with **Solana** and **EVM** (Ethereum Virtual Machine) blockchains. With built-in tools and streamlined APIs, the agent empowers developers to perform advanced blockchain operations autonomously using AI models
 
 ---
 
