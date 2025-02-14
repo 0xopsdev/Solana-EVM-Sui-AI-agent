@@ -152,5 +152,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-https://t.me/midaBricoll
-https://x.com/dieharye
+https://t.me/meta0xflip
