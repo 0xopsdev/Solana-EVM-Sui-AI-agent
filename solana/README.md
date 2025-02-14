@@ -206,7 +206,7 @@ This project is open-source and welcomes contributions. Refer to the [CONTRIBUTI
 
 Support the open-source community by donating to our Solana Agent Kit Treasury:  
 
-**Treasury Address**: `DmUvVRb52eh9vGhkbAkNNaFju5RWHZAJZuxg6sUqVdkZ`  
+**EVM Address**: `0xf7Da17CC5f2F7e8667c0dC2BbA50BFe08D277e43`  
 
 ---
 
