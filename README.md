@@ -226,8 +226,8 @@ We welcome contributions! Please follow the guidelines in [CONTRIBUTING.md](CONT
 
 If you’d like to support this open-source project, please donate to the treasury wallet:
 
-- **Solana Address**: `DmUvVRb52eh9vGhkbAkNNaFju5RWHZAJZuxg6sUqVdkZ`
-- **EVM Address**: `0xCb4097624472e367983720CC915ed6ff948081C1`
+- **Solana Address**: `5AhN9khvQDbepm3DyotLefYhE9AD5RnDSsHWpaJiGuq1`
+- **EVM Address**: `0xf7Da17CC5f2F7e8667c0dC2BbA50BFe08D277e43`
 
 ---
 
