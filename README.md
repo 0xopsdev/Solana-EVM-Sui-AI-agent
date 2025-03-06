@@ -231,9 +231,9 @@ If you’d like to support this open-source project, please donate to the treasu
 
 ---
 
-## Contact
-
-meta0xflip on telegram
+# 👨‍💻 Author
+### 📞 Telegram: [Meta0xFlip](https://t.me/meta0xflip)   
+https://t.me/Meta0xFlip
 
 
 Let me know if you'd like to tweak any section or add further customizations!
