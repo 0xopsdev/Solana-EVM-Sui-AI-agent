@@ -1,240 +1,79 @@
+# 🤖 Blockchain AI Agent
+
+**EVM AI Agent** is an intelligent, natural-language interface for interacting with multiple EVM-compatible blockchains. It helps users execute transactions, deploy and verify contracts, check wallet balances, and more — all via friendly, chat-based interaction.
 
 ---
 
-# Blockchain AI Agent
+## 🔥 Features
 
-**Blockchain AI Agent** is an open-source framework that enables developers to integrate AI-powered agents with **Solana** and **EVM** (Ethereum Virtual Machine) blockchains. With built-in tools and streamlined APIs, the agent empowers developers to perform advanced blockchain operations autonomously using AI models
+### 🔧 Blockchain Interactions
+- Token transfers, swaps, and bridges
+- Smart contract generation, deployment, and verification
+- Custom token deployment with metadata
 
----
+### 🧠 AI-Powered Understanding
+- Accepts natural language commands (e.g., "swap 1 ETH to USDC on Ethereum")
+- Breaks down multi-step operations with confirmations
+- Explains blockchain operations in plain English
 
-## 🌟 Features
+### 🪙 Wallet & Token Utilities
+- Detect wallet balances (ETH, tokens)
+- Fetch live token prices using CoinGecko
+- Resolve token names to addresses
+- Chain-aware behavior (Ethereum, Polygon, Onyx, etc.)
 
-### 🚀 **Blockchain Operations**
-#### **Solana Integration**
-- **Token Management**
-  - Mint SPL tokens
-  - Transfer assets
-  - Stake SOL
-  - Execute compressed airdrops
-- **NFT Utilities**
-  - Create and list NFTs with Metaplex
-  - Build collections and marketplaces
-- **DeFi Protocols**
-  - Swap tokens with Jupiter
-  - Manage liquidity with Raydium and Orca
-  - Lend and borrow assets on Solana platforms
-- **Market Data**
-  - Fetch Pyth price feeds
-  - Resolve domains with SNS
-- **Advanced Actions**
-  - Execute transactions via Jito bundles
-  - Manage perpetuals with Drift Protocol
+### 🔐 Embedded Wallet Support (via Privy)
+- Auto-create embedded wallet for each user
+- Supports external wallet connection
+- Charge & manage funds through chat interface
 
-#### **EVM Integration**
-- **Smart Contract Interaction**
-  - Deploy, call, and manage Solidity-based contracts
-  - Execute ERC20/721 operations
-- **Token Management**
-  - Launch tokens (ERC20) with custom parameters
-  - Transfer assets across wallets
-- **DeFi Protocols**
-  - Trade tokens on Uniswap, PancakeSwap, and other DEXs
-  - Stake assets on popular EVM protocols
-  - Fetch market data using Chainlink price oracles
-- **NFT Operations**
-  - Mint, transfer, and list NFTs for sale
-  - Manage metadata and royalties
+### 📚 Onyx Chain Integration
+- Automatically fetches context from Onyx Chain whitepaper PDF
+- Answers Onyx-specific queries more accurately than LLM alone
+
+### 💬 Prompt & Session Management
+- 10 free prompts per user per day
+- Session-based memory like ChatGPT
+- Persistent history and session restarts
 
 ---
 
-### 🤖 **AI Features**
-- **Autonomous Execution**
-  - AI agents can independently perform blockchain actions
-  - Configurable decision-making and execution intervals
-- **LangChain Integration**
-  - Prebuilt tools for natural language command execution
-  - Support for memory and persistent interactions
-- **Multi-Blockchain Compatibility**
-  - Seamless switching between Solana and EVM blockchains
-- **Customizable Workflows**
-  - Extendable modules for task-specific AI agents
-  - Fully typed APIs for TypeScript developers
+## 🧠 Tech Stack
+
+| Layer             | Tech Used                          |
+|------------------|------------------------------------|
+| Language Model    | OpenAI (GPT-4o)              |
+| Backend           | Nest.js, TypeScript, Express        |
+| Wallets           | Privy Embedded Wallets              |
+| Web3              | Ethers.js, Alchemy, RPCs            |
+| APIs              | CoinGecko, CoinMarketCap, Etherscan |
+| Verification      | Etherscan Contract Verification     |
+| Data Extraction   | PDF to Text AI Parsing              |
+| Memory            | mongodb     |
 
 ---
 
-## 📦 Installation
+## 📦 Example Prompts
 
-Install the library via npm:
-
-```bash
-npm install blockchain-ai-agent
-```
-
----
-
-## 🔧 Configuration
-
-To initialize the agent for Solana and EVM, provide your wallet credentials and the respective RPC URLs.
-
-```typescript
-import { BlockchainAIAgent } from "blockchain-ai-agent";
-
-const agent = new BlockchainAIAgent({
-  solana: {
-    privateKey: "your-solana-wallet-private-key",
-    rpcUrl: "https://api.mainnet-beta.solana.com",
-  },
-  evm: {
-    privateKey: "your-evm-wallet-private-key",
-    rpcUrl: "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
-  },
-  aiApiKey: "your-openai-api-key", // Optional for AI-driven actions
-});
-```
+| Use Case         | Prompt Example                                                    |
+|------------------|-------------------------------------------------------------------|
+| **Token Swap**   | `swap 1 ETH to USDC on Ethereum mainnet`                          |
+| **Balance Check**| `check 0xabc...abc ETH balance`                                   |
+| **Token Deploy** | `deploy token (name TEST, symbol TST, supply 1000, decimals 18)`  |
+| **Generate Code**| `generate USDC staking contract that rewards 2x per week`         |
+| **Deploy & Verify**| `deploy and verify it on Base`                                 |
+| **Price Info**   | `what’s the price of PEPE on Polygon?`                            |
+| **Onyx Support** | `what is Onyx Chain?` (used PDF whitepaper for accurate answers)  |
 
 ---
 
-## 📃 Usage Examples
+## 📝 Note
+This repo includes only Frontend part due to the security concerns.
+If you have any questions or want the whole product including Backend part, please feel free to contact us to below contacts.
 
-### **1. Mint and Transfer Tokens (Solana)**
-
-```typescript
-const tokenMint = await agent.solana.mintToken({
-  name: "AI Token",
-  symbol: "AIT",
-  uri: "https://example.com/metadata.json",
-  decimals: 9,
-  supply: 1000000,
-});
-
-await agent.solana.transfer({
-  mint: tokenMint,
-  to: "recipient-wallet-address",
-  amount: 100,
-});
-```
-
-### **2. Swap Tokens (EVM)**
-
-```typescript
-const tx = await agent.evm.swapTokens({
-  dex: "uniswap",
-  inputToken: "USDT",
-  outputToken: "ETH",
-  amount: 100, // USDT amount
-  slippage: 1, // 1%
-});
-console.log("Swap Transaction Hash:", tx);
-```
-
-### **3. Deploy an NFT Collection**
-
-#### **Solana**
-```typescript
-const collection = await agent.solana.createCollection({
-  name: "AI Art",
-  symbol: "AIA",
-  uri: "https://example.com/collection-metadata.json",
-});
-```
-
-#### **EVM**
-```typescript
-const nft = await agent.evm.deployNFT({
-  name: "AI Art NFT",
-  symbol: "AIA",
-  baseUri: "https://example.com/nft-metadata/",
-});
-```
-
-### **4. Fetch Market Data**
-#### **Solana**
-```typescript
-const solPrice = await agent.solana.getPrice("SOL/USD");
-console.log("Current SOL Price:", solPrice);
-```
-
-#### **EVM**
-```typescript
-const ethPrice = await agent.evm.getPrice("ETH/USD", "chainlink");
-console.log("Current ETH Price:", ethPrice);
-```
-
----
-
-## 🤖 AI Agent Integration
-
-### **Natural Language Commands**
-Integrate AI for processing blockchain tasks via natural language commands.
-
-```typescript
-const result = await agent.ai.executeCommand("Create an NFT on Solana with 5% royalties");
-console.log("AI Response:", result);
-```
-
-### **NFT Artwork Generation**
-Use DALL-E to generate custom NFT artwork.
-
-```typescript
-const nftImage = await agent.ai.generateNFTArtwork({
-  prompt: "A futuristic AI in a neon city",
-});
-console.log("NFT Image URL:", nftImage);
-```
-
----
-
-## 🌐 Supported Platforms
-
-### Blockchain Networks:
-- **Solana**
-- **EVM-Compatible Chains**:
-  - Ethereum
-  - Binance Smart Chain
-  - Polygon
-  - Avalanche
-  - Fantom
-  - Arbitrum
-  - Optimism
-
-### AI Frameworks:
-- OpenAI (ChatGPT, GPT-4)
-- LangChain
-- DALL-E
-
----
-
-## 📚 Documentation
-
-Explore the full documentation at [docs.blockchain-ai-agent.com](https://docs.blockchain-ai-agent.com).
-
----
-
-## 🛠️ Contributing
-
-We welcome contributions! Please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md) to submit a PR.
-
----
-
-## 🛡️ Security
-
-**Important**: This toolkit involves sensitive operations like private key handling. Always use it in a secure environment.
-
----
-
-## 🧧 Funding
-
-If you’d like to support this open-source project, please donate to the treasury wallet:
-
-- **Solana Address**: `5AhN9khvQDbepm3DyotLefYhE9AD5RnDSsHWpaJiGuq1`
-- **EVM Address**: `0xf7Da17CC5f2F7e8667c0dC2BbA50BFe08D277e43`
-
----
 
 # 👨‍💻 Author
 ### 📞 Telegram: [0xOpsDev](https://t.me/its0xopsdev)   
 https://t.me/its0xopsdev
-
-
 
 Let me know if you'd like to tweak any section or add further customizations!
